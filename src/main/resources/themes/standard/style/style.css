@@ -1,0 +1,34 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+s|WindowedApplication
+{
+    /* make app window transparent */
+    skinClass               : ClassReference("org.lionart.furqan.skins.FurqanSkin");
+    fontFamily              : "Uthman Taha Naksh";
+    fontSize                : 13;
+    /*chromeColor             : #BE743B;*/
+    color                   : white;
+    layoutDirection         : rtl; 
+    direction               : rtl;
+}
+
+
+/** Font Info **/
+@font-face 
+{
+    src                     : url("/../resources/themes/standard/fonts/UthmanTN1 Ver09.otf");
+    fontFamily              : "Uthman Taha Naksh";
+    fontWeight              : normal;
+    fontAntiAliasType       : advanced;
+}
+
+/** Font Info **/
+@font-face 
+{
+    src                     : url("/../resources/themes/standard/fonts/UthmanTN1B Ver09.otf");
+    font-family             : "Uthman Taha Naksh";
+    fontWeight              : bold;
+    fontAntiAliasType       : advanced;
+}

@@ -17,8 +17,13 @@
 package org.lionart.furqan.conf
 {
 
-    public final class SignalCatalog
+    public final class NotificationCatalog
     {
         public static const STARTUP : String = "startup";
+
+        // Header actions
+        public static const CLOSE_APPLICATION : String = "closeApplication";
+        public static const MINIMIZE_APPLICATION : String = "minimizeApplication";
+
     }
 }

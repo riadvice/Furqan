@@ -16,6 +16,10 @@
  */
 package org.lionart.furqan.view
 {
+    import org.lionart.furqan.conf.NotificationCatalog;
+    import org.lionart.furqan.controller.CloseApplicationCommand;
+    import org.lionart.furqan.controller.MinimizeApplicationCommand;
+    import org.lionart.furqan.events.ApplicationEvent;
     import org.lionart.furqan.view.components.HeaderView;
     import org.puremvc.as3.patterns.mediator.Mediator;
 
@@ -26,6 +30,22 @@ package org.lionart.furqan.view
         public function HeaderMediator( viewComponent : Object = null )
         {
             super(NAME, viewComponent);
+
+            facade.registerCommand(NotificationCatalog.CLOSE_APPLICATION, CloseApplicationCommand);
+            facade.registerCommand(NotificationCatalog.MINIMIZE_APPLICATION, MinimizeApplicationCommand);
+
+            getView().addEventListener(ApplicationEvent.CLOSE_APPLICATION, onCloseApplication);
+            getView().addEventListener(ApplicationEvent.MINIMIZE_APPLICATION, onMinimizeApplication);
+        }
+
+        private function onMinimizeApplication(event:ApplicationEvent):void
+        {
+            sendNotification(NotificationCatalog.MINIMIZE_APPLICATION, event)
+        }
+
+        private function onCloseApplication( event : ApplicationEvent ) : void
+        {
+            sendNotification(NotificationCatalog.CLOSE_APPLICATION, event)
         }
 
         private function getView() : HeaderView

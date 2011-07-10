@@ -16,7 +16,7 @@
  */
 package org.lionart.furqan
 {
-    import org.lionart.furqan.conf.SignalCatalog;
+    import org.lionart.furqan.conf.NotificationCatalog;
     import org.lionart.furqan.controller.StartupCommand;
     import org.puremvc.as3.patterns.facade.Facade;
 
@@ -41,7 +41,7 @@ package org.lionart.furqan
         override protected function initializeController() : void
         {
             super.initializeController();
-            registerCommand(SignalCatalog.STARTUP, StartupCommand);
+            registerCommand(NotificationCatalog.STARTUP, StartupCommand);
         }
 
         /**
@@ -49,7 +49,7 @@ package org.lionart.furqan
          */
         public function startup( app : Furqan ) : void
         {
-            sendNotification(SignalCatalog.STARTUP, app);
+            sendNotification(NotificationCatalog.STARTUP, app);
         }
     }
 }

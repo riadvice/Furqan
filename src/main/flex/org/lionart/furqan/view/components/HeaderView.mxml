@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
-         xmlns:s="library://ns.adobe.com/flex/spark"
-         xmlns:mx="library://ns.adobe.com/flex/mx"
-         xmlns:uicontrol="org.lionart.furqan.uicontrol.*">
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    xmlns:uicontrol="org.lionart.furqan.uicontrol.*">
     <fx:Script>
         <![CDATA[
             import org.lionart.furqan.conf.EmbeddedAssets;
@@ -12,12 +12,28 @@
             {
                 dispatchEvent(new ApplicationEvent(ApplicationEvent.CLOSE_APPLICATION));
             }
+
+            protected function minimizeButton_clickHandler( event : MouseEvent ) : void
+            {
+                dispatchEvent(new ApplicationEvent(ApplicationEvent.MINIMIZE_APPLICATION));
+            }
         ]]>
     </fx:Script>
     <fx:Declarations>
         <!-- Place non-visual elements (e.g., services, value objects) here -->
     </fx:Declarations>
 
-    <uicontrol:BaseButton id="closeButton" icon="{EmbeddedAssets.CROSS}" click="closeButton_clickHandler(event)"/>
+    <s:HGroup left="10"
+        top="10">
+        <uicontrol:BaseButton id="closeButton"
+            icon="{EmbeddedAssets.CROSS}"
+            click="closeButton_clickHandler(event)"
+            skinClass="spark.skins.spark.windowChrome.CloseButtonSkin"
+            toolTip="{resourceManager.getString('furqan','exit')}"/>
+
+        <uicontrol:BaseButton id="minimizeButton"
+            click="minimizeButton_clickHandler(event)"
+            skinClass="spark.skins.spark.windowChrome.MinimizeButtonSkin"/>
+    </s:HGroup>
 
 </s:Group>

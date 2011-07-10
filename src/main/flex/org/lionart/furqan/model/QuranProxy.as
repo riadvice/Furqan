@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2011 Ghazi Triki  <ghazi.nocturne@gmail.com>
+   Copyright (C) 2011 Ghazi Triki <ghazi.nocturne@gmail.com>
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -14,24 +14,18 @@
    You should have received a copy of the GNU General Public License
    along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.lionart.furqan.view
+package org.lionart.furqan.model
 {
-    import org.puremvc.as3.patterns.mediator.Mediator;
+    import org.puremvc.as3.interfaces.IProxy;
+    import org.puremvc.as3.patterns.proxy.Proxy;
 
-    public class FurqanMediator extends Mediator
+    public class QuranProxy extends Proxy implements IProxy
     {
-        public static const NAME : String = "FurqanMediator";
-
-        public function FurqanMediator( app : Furqan )
+        public static const NAME:String = "QuranProxy";
+        
+        public function QuranProxy(data : Object = null)
         {
-            super(NAME, app);
-            
-            facade.registerMediator( new QuranMediator(app.quranView) );
-        }
-
-        private function get airganizer() : Furqan
-        {
-            return viewComponent as Furqan;
+            super(NAME, data);
         }
     }
 }

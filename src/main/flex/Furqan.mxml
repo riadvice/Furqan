@@ -21,7 +21,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 <s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
                        xmlns:s="library://ns.adobe.com/flex/spark"
-                       xmlns:mx="library://ns.adobe.com/flex/mx">
+                       xmlns:mx="library://ns.adobe.com/flex/mx"
+                       xmlns:components="org.lionart.furqan.view.components.*"
+                       creationComplete="facade.startup(this)">
     <fx:Declarations>
         <!-- Place non-visual elements (e.g., services, value objects) here -->
     </fx:Declarations>
@@ -37,7 +39,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <fx:Metadata>
         [ResourceBundle("furqan")]
     </fx:Metadata>
-
+    
+    <components:QuranDisplayView id="quranView" bottom="10" horizontalCenter="0" />
 
     <fx:Style source="/../resources/themes/standard/style/style.css"/>
 

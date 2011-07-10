@@ -16,40 +16,40 @@
  */
 package org.lionart.furqan
 {
+    import org.lionart.furqan.conf.SignalCatalog;
+    import org.lionart.furqan.controller.StartupCommand;
     import org.puremvc.as3.patterns.facade.Facade;
 
     public class FurqanFacade extends Facade
     {
-        public static const STARTUP : String = "startup";
-        
+
         /**
          * Returns a singleton of AirganizerFacade
          */
         public static function getInstance() : FurqanFacade
         {
-            if ( instance == null )
+            if (instance == null)
             {
                 instance = new FurqanFacade();
             }
             return instance as FurqanFacade;
         }
-        
+
         /**
          * Saves commands against the Controller
          */
         override protected function initializeController() : void
         {
             super.initializeController();
-            /*registerCommand(STARTUP, StartupCommand);
-            registerCommand(LOAD_CONFIGURATION, LoadConfigurationCommand);*/
+            registerCommand(SignalCatalog.STARTUP, StartupCommand);
         }
-        
+
         /**
          * Starts PureMVC environement
          */
         public function startup( app : Furqan ) : void
         {
-            sendNotification(STARTUP,app);
+            sendNotification(SignalCatalog.STARTUP, app);
         }
     }
 }

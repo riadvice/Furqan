@@ -16,22 +16,21 @@
  */
 package org.lionart.furqan.view
 {
+    import org.lionart.furqan.view.components.QuranDisplayView;
     import org.puremvc.as3.patterns.mediator.Mediator;
 
-    public class FurqanMediator extends Mediator
+    public class QuranMediator extends Mediator
     {
-        public static const NAME : String = "FurqanMediator";
-
-        public function FurqanMediator( app : Furqan )
+        public static const NAME : String = "QuranMediator";
+        
+        public function QuranMediator( viewComponent : Object = null )
         {
-            super(NAME, app);
-            
-            facade.registerMediator( new QuranMediator(app.quranView) );
+            super(NAME, viewComponent);
         }
-
-        private function get airganizer() : Furqan
+        
+        private function getView() : QuranDisplayView
         {
-            return viewComponent as Furqan;
+            return viewComponent as QuranDisplayView;
         }
     }
 }

@@ -40,6 +40,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         [ResourceBundle("furqan")]
     </fx:Metadata>
     
+    <components:HeaderView id="headerView" top="0" right="0" left="0"/>
+    
     <components:QuranDisplayView id="quranView" bottom="10" horizontalCenter="0" />
 
     <fx:Style source="/../resources/themes/standard/style/style.css"/>

@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2011 Ghazi Triki <ghazi.nocturne@gmail.com>
+   Copyright (C) 2011 Ghazi Triki  <ghazi.nocturne@gmail.com>
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -14,16 +14,23 @@
    You should have received a copy of the GNU General Public License
    along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.lionart.furqan.conf
+package org.lionart.furqan.view
 {
+    import org.lionart.furqan.view.components.HeaderView;
+    import org.puremvc.as3.patterns.mediator.Mediator;
 
-    public final class EmbeddedAssets
+    public class HeaderMediator extends Mediator
     {
-        [Embed(source="/../resources/themes/standard/assets/paper-bg.png")]
-        public static const PAPER_BACKGROUND : Class;
-        
-        // ICONS
-        [Embed(source="/../resources/themes/standard/assets/cross.png")]
-        public static const CROSS : Class;
+        public static const NAME : String = "HeaderMediator";
+
+        public function HeaderMediator( viewComponent : Object = null )
+        {
+            super(NAME, viewComponent);
+        }
+
+        private function getView() : HeaderView
+        {
+            return viewComponent as HeaderView;
+        }
     }
 }

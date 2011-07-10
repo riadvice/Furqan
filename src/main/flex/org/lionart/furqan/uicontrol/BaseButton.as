@@ -14,16 +14,17 @@
    You should have received a copy of the GNU General Public License
    along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.lionart.furqan.conf
+package org.lionart.furqan.uicontrol
 {
+    import spark.components.Button;
 
-    public final class EmbeddedAssets
+    public class BaseButton extends Button
     {
-        [Embed(source="/../resources/themes/standard/assets/paper-bg.png")]
-        public static const PAPER_BACKGROUND : Class;
-        
-        // ICONS
-        [Embed(source="/../resources/themes/standard/assets/cross.png")]
-        public static const CROSS : Class;
+        public function BaseButton()
+        {
+            super();
+            buttonMode = true;
+            useHandCursor = true;
+        }
     }
 }

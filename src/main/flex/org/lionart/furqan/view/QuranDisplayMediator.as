@@ -19,11 +19,11 @@ package org.lionart.furqan.view
     import org.lionart.furqan.view.components.QuranDisplayView;
     import org.puremvc.as3.patterns.mediator.Mediator;
 
-    public class QuranMediator extends Mediator
+    public class QuranDisplayMediator extends Mediator
     {
         public static const NAME : String = "QuranMediator";
         
-        public function QuranMediator( viewComponent : Object = null )
+        public function QuranDisplayMediator( viewComponent : Object = null )
         {
             super(NAME, viewComponent);
         }

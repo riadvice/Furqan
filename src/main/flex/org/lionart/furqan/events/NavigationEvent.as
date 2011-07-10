@@ -14,16 +14,20 @@
    You should have received a copy of the GNU General Public License
    along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.lionart.furqan.conf
+package org.lionart.furqan.events
 {
+    import flash.events.Event;
 
-    public final class EmbeddedAssets
+    public class NavigationEvent extends Event
     {
-        [Embed(source="/../resources/themes/standard/assets/paper-bg.png")]
-        public static const PAPER_BACKGROUND : Class;
-        
-        // ICONS
-        [Embed(source="/../resources/themes/standard/assets/cross.png")]
-        public static const CROSS : Class;
+        public function NavigationEvent( type : String, bubbles : Boolean = false, cancelable : Boolean = false )
+        {
+            super(type, bubbles, cancelable);
+        }
+
+        override public function clone() : Event
+        {
+            return new NavigationEvent(type, bubbles, cancelable);
+        }
     }
 }

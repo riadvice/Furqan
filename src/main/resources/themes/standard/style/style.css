@@ -1,6 +1,7 @@
 /* CSS file */
 @namespace s "library://ns.adobe.com/flex/spark";
 @namespace mx "library://ns.adobe.com/flex/mx";
+@namespace components "org.lionart.furqan.view.components.*";
 
 s|WindowedApplication
 {
@@ -31,4 +32,13 @@ s|WindowedApplication
     font-family             : "Uthman Taha Naksh";
     fontWeight              : bold;
     fontAntiAliasType       : advanced;
+}
+
+components|QuranDisplayView #quranContent
+{
+    fontFamily              : "KFGQPC Uthmanic Script HAFS";
+    fontAntiAliasType       : advanced;
+    fontSize                : 32;
+    textAlign               : justify;
+    color                   : #333333;
 }

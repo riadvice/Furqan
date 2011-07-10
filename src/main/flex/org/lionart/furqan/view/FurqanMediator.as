@@ -26,7 +26,8 @@ package org.lionart.furqan.view
         {
             super(NAME, app);
             
-            facade.registerMediator( new QuranMediator(app.quranView) );
+            facade.registerMediator( new QuranDisplayMediator(app.quranView) );
+            facade.registerMediator( new QuranDisplayMediator(app.headerView) );
         }
 
         private function get airganizer() : Furqan

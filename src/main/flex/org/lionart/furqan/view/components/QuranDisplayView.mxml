@@ -9,9 +9,11 @@
         ]]>
     </fx:Script>
     <fx:Declarations>
-        <!-- Place non-visual elements (e.g., services, value objects) here -->
+        <s:GlowFilter id="glowFilter" color="#073567" blurX="12" blurY="12" alpha="0.8" strength="3"/>
     </fx:Declarations>
     
-    <s:BitmapImage source="{EmbeddedAssets.PAPER_BACKGROUND}"/>
+    <s:BitmapImage source="{EmbeddedAssets.PAPER_BACKGROUND}" filters="{[glowFilter]}"/>
+    
+    <s:RichText id="quranContent" top="60" bottom="40" right="90" left="90"/>
     
 </s:Group>

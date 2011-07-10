@@ -21,9 +21,9 @@ package org.lionart.furqan.model
 
     public class QuranProxy extends Proxy implements IProxy
     {
-        public static const NAME:String = "QuranProxy";
-        
-        public function QuranProxy(data : Object = null)
+        public static const NAME : String = "QuranProxy";
+
+        public function QuranProxy( data : Object = null )
         {
             super(NAME, data);
         }

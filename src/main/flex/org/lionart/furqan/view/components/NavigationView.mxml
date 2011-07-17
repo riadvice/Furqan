@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+    xmlns:s="library://ns.adobe.com/flex/spark"
+    xmlns:mx="library://ns.adobe.com/flex/mx"
+    xmlns:uicontrol="org.lionart.furqan.uicontrol.*">
+    <fx:Declarations>
+        <!-- Place non-visual elements (e.g., services, value objects) here -->
+    </fx:Declarations>
+
+    <s:HGroup>
+        <uicontrol:BaseButton id="nextButton"/>
+        <uicontrol:BaseButton id="previousButton"/>
+    </s:HGroup>
+
+</s:Group>

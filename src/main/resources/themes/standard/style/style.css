@@ -36,7 +36,7 @@ s|WindowedApplication
 
 components|QuranDisplayView #quranContent
 {
-    fontFamily              : "KFGQPC Uthmanic Script HAFS";
+    fontFamily              : "UthmanicHafs";
     fontAntiAliasType       : advanced;
     fontSize                : 32;
     textAlign               : justify;

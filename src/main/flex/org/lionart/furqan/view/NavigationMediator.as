@@ -14,16 +14,23 @@
    You should have received a copy of the GNU General Public License
    along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.lionart.furqan.conf
+package org.lionart.furqan.view
 {
+    import org.lionart.furqan.view.components.NavigationView;
+    import org.puremvc.as3.patterns.mediator.Mediator;
 
-    public final class EmbeddedAssets
+    public class NavigationMediator extends Mediator
     {
-        [Embed(source="/../resources/themes/standard/assets/full-margin.png")]
-        public static const PAPER_BACKGROUND : Class;
+        public static const NAME : String = "NavigationMediator";
         
-        // ICONS
-        [Embed(source="/../resources/themes/standard/assets/cross.png")]
-        public static const CROSS : Class;
+        public function NavigationMediator( viewComponent : Object = null )
+        {
+            super(NAME, viewComponent);
+        }
+        
+        private function getView() : NavigationView
+        {
+            return viewComponent as NavigationView;
+        }
     }
 }

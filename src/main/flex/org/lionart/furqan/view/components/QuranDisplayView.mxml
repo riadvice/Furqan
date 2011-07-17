@@ -9,7 +9,7 @@
         ]]>
     </fx:Script>
     <fx:Declarations>
-        <s:GlowFilter id="glowFilter" color="#073567" blurX="12" blurY="12" alpha="0.8" strength="3"/>
+        <s:GlowFilter id="glowFilter" color="#A9BE7E" blurX="12" blurY="12" alpha="0.8" strength="3"/>
     </fx:Declarations>
     
     <s:BitmapImage source="{EmbeddedAssets.PAPER_BACKGROUND}" filters="{[glowFilter]}" horizontalCenter="0" bottom="0"/>

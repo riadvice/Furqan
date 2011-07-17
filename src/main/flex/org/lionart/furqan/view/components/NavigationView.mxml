@@ -8,8 +8,8 @@
     </fx:Declarations>
 
     <s:HGroup>
-        <uicontrol:BaseButton id="nextButton"/>
-        <uicontrol:BaseButton id="previousButton"/>
+        <uicontrol:BaseButton id="nextButton" label="{resourceManager.getString('furqan','previousSura')}"/>
+        <uicontrol:BaseButton id="previousButton" label="{resourceManager.getString('furqan','nextSura')}"/>
     </s:HGroup>
 
 </s:Group>

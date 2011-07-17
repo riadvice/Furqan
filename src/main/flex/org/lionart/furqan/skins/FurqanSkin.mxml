@@ -78,8 +78,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
             <!--- @private -->
             <s:LinearGradient rotation="90">
                 <s:entries>
-                    <s:GradientEntry color="#1D85F8"/>
-                    <s:GradientEntry color="#073567"/>
+                    <s:GradientEntry color="#BED082"/>
+                    <s:GradientEntry color="#A9BE7E"/>
                 </s:entries>
             </s:LinearGradient>
         </s:fill>

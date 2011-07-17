@@ -9,8 +9,8 @@ s|WindowedApplication
     skinClass               : ClassReference("org.lionart.furqan.skins.FurqanSkin");
     fontFamily              : "Uthman Taha Naksh";
     fontSize                : 13;
-    /*chromeColor             : #BE743B;*/
-    color                   : white;
+    chromeColor             : #A9BE7E;
+    color                   : black;
     layoutDirection         : rtl; 
     direction               : rtl;
 }

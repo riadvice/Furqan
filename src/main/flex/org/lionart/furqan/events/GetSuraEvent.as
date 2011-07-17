@@ -14,26 +14,23 @@
    You should have received a copy of the GNU General Public License
    along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.lionart.furqan.view
+package org.lionart.furqan.events
 {
-    import org.puremvc.as3.patterns.mediator.Mediator;
+    import flash.events.Event;
 
-    public class FurqanMediator extends Mediator
+    public class GetSuraEvent extends Event
     {
-        public static const NAME : String = "FurqanMediator";
+        public static const NEXT_SURA : String = "nextSura";
+        public static const PREVIOUS_SURA : String = "previousSura";
 
-        public function FurqanMediator( app : Furqan )
+        public function GetSuraEvent( type : String, bubbles : Boolean = false, cancelable : Boolean = false )
         {
-            super(NAME, app);
-
-            facade.registerMediator(new HeaderMediator(app.headerView));
-            facade.registerMediator(new NavigationMediator(app.navigationView));
-            facade.registerMediator(new QuranDisplayMediator(app.quranView));
+            super(type, bubbles, cancelable);
         }
 
-        private function get airganizer() : Furqan
+        override public function clone() : Event
         {
-            return viewComponent as Furqan;
+            return new GetSuraEvent(type, bubbles, cancelable);
         }
     }
 }

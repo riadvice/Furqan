@@ -21,9 +21,14 @@ package org.lionart.furqan.conf
     {
         public static const STARTUP : String = "startup";
 
+        // Navigation actions
+        public static const GET_SURA_BY_NUMBER : String = "getSuraByNumber";
+        
         // Header actions
         public static const CLOSE_APPLICATION : String = "closeApplication";
         public static const MINIMIZE_APPLICATION : String = "minimizeApplication";
 
+        // Navigation results
+        public static const SURA_LOADED : String = "suraLoaded";
     }
 }

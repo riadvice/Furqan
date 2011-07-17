@@ -42,7 +42,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     
     <components:HeaderView id="headerView" top="0" right="0" left="0"/>
     
-    <components:NavigationView id="navigationView" top="50" left="40" right="40"/>
+    <components:NavigationView id="navigationView" top="40" left="40" right="40"/>
     
     <components:QuranDisplayView id="quranView" bottom="10" horizontalCenter="0" />
 

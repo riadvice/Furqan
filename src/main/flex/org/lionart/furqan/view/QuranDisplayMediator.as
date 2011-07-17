@@ -16,18 +16,46 @@
  */
 package org.lionart.furqan.view
 {
+    import org.lionart.furqan.conf.NotificationCatalog;
     import org.lionart.furqan.view.components.QuranDisplayView;
+    import org.lionart.qurani.Aya;
+    import org.lionart.qurani.Sura;
+    import org.puremvc.as3.interfaces.INotification;
     import org.puremvc.as3.patterns.mediator.Mediator;
 
     public class QuranDisplayMediator extends Mediator
     {
         public static const NAME : String = "QuranMediator";
-        
+
         public function QuranDisplayMediator( viewComponent : Object = null )
         {
             super(NAME, viewComponent);
         }
-        
+
+        override public function handleNotification( notification : INotification ) : void
+        {
+            switch (notification.getName())
+            {
+                case NotificationCatalog.SURA_LOADED:
+                    showSura(notification.getBody() as Sura);
+                    break;
+            }
+        }
+
+        override public function listNotificationInterests() : Array
+        {
+            return [NotificationCatalog.SURA_LOADED];
+        }
+
+        public function showSura( sura : Sura ) : void
+        {
+            getView().quranContent.text = Aya(sura.ayat[0]).othmani;
+            for ( var i : int = 1; i < sura.ayat.length; i++)
+            {
+                getView().quranContent.text += " " + Aya(sura.ayat[i]).othmani;
+            }
+        }
+
         private function getView() : QuranDisplayView
         {
             return viewComponent as QuranDisplayView;

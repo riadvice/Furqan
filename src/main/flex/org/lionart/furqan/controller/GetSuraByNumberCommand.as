@@ -14,26 +14,20 @@
    You should have received a copy of the GNU General Public License
    along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.lionart.furqan.view
+package org.lionart.furqan.controller
 {
-    import org.puremvc.as3.patterns.mediator.Mediator;
+    import org.lionart.furqan.conf.NotificationCatalog;
+    import org.lionart.furqan.model.QuranProxy;
+    import org.lionart.qurani.Sura;
+    import org.puremvc.as3.interfaces.INotification;
+    import org.puremvc.as3.patterns.command.SimpleCommand;
 
-    public class FurqanMediator extends Mediator
+    public class GetSuraByNumberCommand extends SimpleCommand
     {
-        public static const NAME : String = "FurqanMediator";
-
-        public function FurqanMediator( app : Furqan )
+        override public function execute( notification : INotification ) : void
         {
-            super(NAME, app);
-
-            facade.registerMediator(new HeaderMediator(app.headerView));
-            facade.registerMediator(new NavigationMediator(app.navigationView));
-            facade.registerMediator(new QuranDisplayMediator(app.quranView));
-        }
-
-        private function get airganizer() : Furqan
-        {
-            return viewComponent as Furqan;
+            var sura : Sura = QuranProxy(facade.retrieveProxy(QuranProxy.NAME)).getSuraByNumber(parseInt(notification.getBody().toString()));
+            facade.sendNotification(NotificationCatalog.SURA_LOADED, sura);
         }
     }
 }

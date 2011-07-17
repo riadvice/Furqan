@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2011 Ghazi Triki  <ghazi.nocturne@gmail.com>
+   Copyright (C) 2011 Ghazi Triki <ghazi.nocturne@gmail.com>
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ package org.lionart.furqan.view
             getView().addEventListener(ApplicationEvent.MINIMIZE_APPLICATION, onMinimizeApplication);
         }
 
-        private function onMinimizeApplication(event:ApplicationEvent):void
+        private function onMinimizeApplication( event : ApplicationEvent ) : void
         {
             sendNotification(NotificationCatalog.MINIMIZE_APPLICATION, event)
         }

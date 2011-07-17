@@ -16,18 +16,38 @@
  */
 package org.lionart.furqan.view
 {
+    import org.lionart.furqan.conf.NotificationCatalog;
+    import org.lionart.furqan.controller.GetSuraByNumberCommand;
+    import org.lionart.furqan.events.GetSuraEvent;
     import org.lionart.furqan.view.components.NavigationView;
     import org.puremvc.as3.patterns.mediator.Mediator;
 
     public class NavigationMediator extends Mediator
     {
         public static const NAME : String = "NavigationMediator";
-        
+
+        public var selectedSuraNumber : int = 1;
+
         public function NavigationMediator( viewComponent : Object = null )
         {
             super(NAME, viewComponent);
+
+            facade.registerCommand(NotificationCatalog.GET_SURA_BY_NUMBER, GetSuraByNumberCommand);
+
+            getView().addEventListener(GetSuraEvent.NEXT_SURA, onNextSura);
+            getView().addEventListener(GetSuraEvent.PREVIOUS_SURA, onPreviousSura);
         }
-        
+
+        private function onPreviousSura( event : GetSuraEvent ) : void
+        {
+            sendNotification(NotificationCatalog.GET_SURA_BY_NUMBER, --selectedSuraNumber);
+        }
+
+        private function onNextSura( event : GetSuraEvent ) : void
+        {
+            sendNotification(NotificationCatalog.GET_SURA_BY_NUMBER, ++selectedSuraNumber);
+        }
+
         private function getView() : NavigationView
         {
             return viewComponent as NavigationView;

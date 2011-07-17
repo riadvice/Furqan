@@ -22,7 +22,6 @@ s|WindowedApplication
     src                     : url("/../resources/themes/standard/fonts/UthmanTN1 Ver09.otf");
     fontFamily              : "Uthman Taha Naksh";
     fontWeight              : normal;
-    fontAntiAliasType       : advanced;
 }
 
 /** Font Info **/
@@ -31,14 +30,17 @@ s|WindowedApplication
     src                     : url("/../resources/themes/standard/fonts/UthmanTN1B Ver09.otf");
     font-family             : "Uthman Taha Naksh";
     fontWeight              : bold;
-    fontAntiAliasType       : advanced;
 }
 
 components|QuranDisplayView #quranContent
 {
     fontFamily              : "UthmanicHafs";
-    fontAntiAliasType       : advanced;
-    fontSize                : 32;
+    fontSize                : 28;
     textAlign               : justify;
     color                   : #333333;
+}
+
+.suraInfo
+{
+    fontSize                : 18;
 }

@@ -16,6 +16,8 @@
  */
 package org.lionart.furqan.model
 {
+    import org.lionart.qurani.Quran;
+    import org.lionart.qurani.Sura;
     import org.puremvc.as3.interfaces.IProxy;
     import org.puremvc.as3.patterns.proxy.Proxy;
 
@@ -23,9 +25,17 @@ package org.lionart.furqan.model
     {
         public static const NAME : String = "QuranProxy";
 
+        private var quran : Quran;
+
         public function QuranProxy( data : Object = null )
         {
             super(NAME, data);
+            quran = new Quran();
+        }
+
+        public function getSuraByNumber( suraNumber : int ) : Sura
+        {
+            return quran.getSura(suraNumber);
         }
     }
 }

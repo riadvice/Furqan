@@ -40,7 +40,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         <s:BitmapImage id="borderImage" 
             source="{EmbeddedAssets.PAPER_BACKGROUND}" filters="{[glowFilter]}"
             top="5" bottom="5" right="5" left="5"/>
-        <uicontrol:SuraHeader top="50" horizontalCenter="0"/>
+        <uicontrol:SuraHeader id="suraHeader" top="50" horizontalCenter="0"/>
         <s:Scroller id="textScroller" top="130" height="300" right="70" width="600">
             <s:Group>
                 <s:RichEditableText id="quranContent"
@@ -50,6 +50,5 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
             </s:Group>
         </s:Scroller>
     </s:BorderContainer>
-    
     
 </s:Group>

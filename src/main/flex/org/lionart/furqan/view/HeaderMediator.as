@@ -38,6 +38,12 @@ package org.lionart.furqan.view
             getView().addEventListener(ApplicationEvent.MINIMIZE_APPLICATION, onMinimizeApplication);
         }
 
+        //--------------------------------------------------------------------------
+        //
+        //  Event handlers
+        //
+        //--------------------------------------------------------------------------
+        
         private function onMinimizeApplication( event : ApplicationEvent ) : void
         {
             sendNotification(NotificationCatalog.MINIMIZE_APPLICATION, event)
@@ -48,6 +54,12 @@ package org.lionart.furqan.view
             sendNotification(NotificationCatalog.CLOSE_APPLICATION, event)
         }
 
+        //--------------------------------------------------------------------------
+        //
+        //  Shortcuts
+        //
+        //--------------------------------------------------------------------------
+        
         private function getView() : HeaderView
         {
             return viewComponent as HeaderView;

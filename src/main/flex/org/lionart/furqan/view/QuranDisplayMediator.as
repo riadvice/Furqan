@@ -17,6 +17,7 @@
 package org.lionart.furqan.view
 {
     import org.lionart.furqan.conf.NotificationCatalog;
+    import org.lionart.furqan.uicontrol.SuraHeader;
     import org.lionart.furqan.view.components.QuranDisplayView;
     import org.lionart.qurani.Aya;
     import org.lionart.qurani.Sura;
@@ -34,12 +35,19 @@ package org.lionart.furqan.view
             super(NAME, viewComponent);
         }
 
+        //--------------------------------------------------------------------------
+        //
+        //  Notification handling
+        //
+        //--------------------------------------------------------------------------
+        
         override public function handleNotification( notification : INotification ) : void
         {
             switch (notification.getName())
             {
                 case NotificationCatalog.SURA_LOADED:
-                    handleSuraLoaded(notification.getBody() as Sura);
+                    showSura(notification.getBody() as Sura);
+                    updateHeader(notification.getBody() as Sura);
                     break;
             }
         }
@@ -48,17 +56,36 @@ package org.lionart.furqan.view
         {
             return [NotificationCatalog.SURA_LOADED];
         }
+        
+        //--------------------------------------------------------------------------
+        //
+        //  View actions
+        //
+        //--------------------------------------------------------------------------
 
-        public function handleSuraLoaded( sura : Sura ) : void
+        public function showSura( sura : Sura ) : void
         {
             getView().quranContent.text = Aya(sura.ayat[0]).othmani;
             for ( var i : int = 1; i < sura.ayat.length; i++)
             {
                 getView().quranContent.text += " " + Aya(sura.ayat[i]).othmani;
             }
-            getView().textScroller.viewport.verticalScrollPosition = 0;//getVerticalScrollPositionDelta(NavigationUnit.);
+            getView().textScroller.viewport.verticalScrollPosition = 0;
             
         }
+        
+        public function updateHeader( sura : Sura ) : void
+        {
+            var header : SuraHeader = getView().suraHeader;
+            header.suraLength.text = sura.ayat.length.toString();
+            header.suraOrder.text = sura.orderInMushaf.toString();
+        }
+        
+        //--------------------------------------------------------------------------
+        //
+        //  Shortcuts
+        //
+        //--------------------------------------------------------------------------
 
         private function getView() : QuranDisplayView
         {

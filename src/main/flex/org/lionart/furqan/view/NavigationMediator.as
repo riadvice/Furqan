@@ -26,7 +26,7 @@ package org.lionart.furqan.view
     {
         public static const NAME : String = "NavigationMediator";
 
-        public var selectedSuraNumber : int = 50;
+        public var selectedSuraNumber : int = 1;
 
         public function NavigationMediator( viewComponent : Object = null )
         {

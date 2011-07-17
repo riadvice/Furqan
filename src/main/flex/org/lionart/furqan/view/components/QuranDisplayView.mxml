@@ -41,9 +41,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
             source="{EmbeddedAssets.PAPER_BACKGROUND}" filters="{[glowFilter]}"
             top="5" bottom="5" right="5" left="5"/>
         <uicontrol:SuraHeader top="50" horizontalCenter="0"/>
-        <s:Scroller top="125" height="300" right="80" width="600">
+        <s:Scroller id="textScroller" top="130" height="300" right="70" width="600">
             <s:Group>
-                <s:RichText id="quranContent" lineBreak="toFit" width="600" height="300" lineHeight="45" />
+                <s:RichEditableText id="quranContent"
+                                    editable="false" lineBreak="toFit"
+                                    textAlign="justify" lineHeight="45"
+                                    width="580"/>
             </s:Group>
         </s:Scroller>
     </s:BorderContainer>

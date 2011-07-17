@@ -22,6 +22,8 @@ package org.lionart.furqan.view
     import org.lionart.qurani.Sura;
     import org.puremvc.as3.interfaces.INotification;
     import org.puremvc.as3.patterns.mediator.Mediator;
+    
+    import spark.core.NavigationUnit;
 
     public class QuranDisplayMediator extends Mediator
     {
@@ -37,7 +39,7 @@ package org.lionart.furqan.view
             switch (notification.getName())
             {
                 case NotificationCatalog.SURA_LOADED:
-                    showSura(notification.getBody() as Sura);
+                    handleSuraLoaded(notification.getBody() as Sura);
                     break;
             }
         }
@@ -47,13 +49,15 @@ package org.lionart.furqan.view
             return [NotificationCatalog.SURA_LOADED];
         }
 
-        public function showSura( sura : Sura ) : void
+        public function handleSuraLoaded( sura : Sura ) : void
         {
             getView().quranContent.text = Aya(sura.ayat[0]).othmani;
             for ( var i : int = 1; i < sura.ayat.length; i++)
             {
                 getView().quranContent.text += " " + Aya(sura.ayat[i]).othmani;
             }
+            getView().textScroller.viewport.verticalScrollPosition = 0;//getVerticalScrollPositionDelta(NavigationUnit.);
+            
         }
 
         private function getView() : QuranDisplayView

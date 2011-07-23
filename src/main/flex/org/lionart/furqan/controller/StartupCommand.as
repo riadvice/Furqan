@@ -23,6 +23,7 @@ package org.lionart.furqan.controller
         override protected function initializeMacroCommand() : void
         {
             addSubCommand(CenterApplicationCommand);
+            addSubCommand(ConfigureApplicationCommand);
             addSubCommand(AddListenersCommand);
             addSubCommand(RegisterProxyCommand);
             addSubCommand(RegisterMediatorCommand);

@@ -45,12 +45,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     </fx:Declarations>
 
     <s:HGroup>
-        <uicontrol:BaseButton id="nextButton"
-            label="{resourceManager.getString('furqan','previousSura')}"
-            click="nextButton_clickHandler(event)"/>
         <uicontrol:BaseButton id="previousButton"
-            label="{resourceManager.getString('furqan','nextSura')}"
+            label="{resourceManager.getString('furqan','previousSura')}"
             click="previousButton_clickHandler(event)"/>
+        <uicontrol:BaseButton id="nextButton"
+            label="{resourceManager.getString('furqan','nextSura')}"
+            click="nextButton_clickHandler(event)"/>
     </s:HGroup>
 
 </s:Group>

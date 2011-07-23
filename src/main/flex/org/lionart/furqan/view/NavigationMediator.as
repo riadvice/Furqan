@@ -54,7 +54,8 @@ package org.lionart.furqan.view
             switch (notification.getName())
             {
                 case NotificationCatalog.SURA_LOADED:
-                    updateButtonsStates(notification.getBody() as Sura);
+                    selectedSuraNumber = (notification.getBody() as Sura).orderInMushaf;
+                    updateButtonsStates();
                     break;
             }
         }
@@ -86,14 +87,14 @@ package org.lionart.furqan.view
             getView().nextButtonEnabled = value;
         }
 
-        private function updateButtonsStates( sura : Sura ) : void
+        private function updateButtonsStates() : void
         {
-            if (sura.orderInMushaf != 1 && sura.orderInMushaf != QuranConstants.QURAN_SUWAR_NUMBER)
+            if (selectedSuraNumber != 1 && selectedSuraNumber != QuranConstants.QURAN_SUWAR_NUMBER)
             {
                 enablePreviousButton(true);
                 enableNextButton(true);
             }
-            else if (sura.orderInMushaf == 1)
+            else if (selectedSuraNumber == 1)
             {
                 enablePreviousButton(false);
                 enableNextButton(true);
@@ -113,12 +114,12 @@ package org.lionart.furqan.view
 
         private function onPreviousSura( event : GetSuraEvent ) : void
         {
-            sendNotification(NotificationCatalog.GET_SURA_BY_NUMBER, --selectedSuraNumber);
+            sendNotification(NotificationCatalog.GET_SURA_BY_NUMBER, selectedSuraNumber - 1);
         }
 
         private function onNextSura( event : GetSuraEvent ) : void
         {
-            sendNotification(NotificationCatalog.GET_SURA_BY_NUMBER, ++selectedSuraNumber);
+            sendNotification(NotificationCatalog.GET_SURA_BY_NUMBER, selectedSuraNumber + 1);
         }
 
         //--------------------------------------------------------------------------

@@ -37,12 +37,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     
     <s:VGroup id="orderGroup" top="15" left="105" horizontalAlign="center" gap="-10">
         <s:Label styleName="suraInfo" text="{resourceManager.getString('furqan','itsOrder')}"/>
-        <s:Label styleName="suraInfo" id="suraOrder" text="15"/>
+        <s:Label styleName="suraInfo" id="suraOrder"/>
     </s:VGroup>
     
-    <s:VGroup id="ayatLenghtGroup" top="15" right="105" horizontalAlign="center" gap="-10">
+    <s:VGroup id="ayatLenghtGroup" top="15" right="107" horizontalAlign="center" gap="-10">
         <s:Label styleName="suraInfo" text="{resourceManager.getString('furqan','itsAyat')}"/>
-        <s:Label styleName="suraInfo" id="suraLength" text="112"/>
+        <s:Label styleName="suraInfo" id="suraLength"/>
     </s:VGroup>
     
 </s:Group>

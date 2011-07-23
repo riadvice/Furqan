@@ -41,8 +41,6 @@ package org.lionart.furqan.controller
             fadeOut.alphaTo = 0;
             fadeOut.duration = 300;
             ToolTipManager.hideEffect = fadeOut;
-            
-            //CursorManager.setCursor( EmbeddedAssets.CURSOR, CursorManagerPriority.LOW );
         }
     }
 }

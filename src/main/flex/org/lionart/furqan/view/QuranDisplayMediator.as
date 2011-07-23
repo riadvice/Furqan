@@ -16,6 +16,9 @@
  */
 package org.lionart.furqan.view
 {
+    import mx.resources.ResourceBundle;
+    import mx.resources.ResourceManager;
+
     import org.lionart.furqan.conf.NotificationCatalog;
     import org.lionart.furqan.uicontrol.SuraHeader;
     import org.lionart.furqan.view.components.QuranDisplayView;
@@ -23,7 +26,7 @@ package org.lionart.furqan.view
     import org.lionart.qurani.Sura;
     import org.puremvc.as3.interfaces.INotification;
     import org.puremvc.as3.patterns.mediator.Mediator;
-    
+
     import spark.core.NavigationUnit;
 
     public class QuranDisplayMediator extends Mediator
@@ -40,7 +43,7 @@ package org.lionart.furqan.view
         //  Notification handling
         //
         //--------------------------------------------------------------------------
-        
+
         override public function handleNotification( notification : INotification ) : void
         {
             switch (notification.getName())
@@ -56,7 +59,7 @@ package org.lionart.furqan.view
         {
             return [NotificationCatalog.SURA_LOADED];
         }
-        
+
         //--------------------------------------------------------------------------
         //
         //  View actions
@@ -66,21 +69,22 @@ package org.lionart.furqan.view
         public function showSura( sura : Sura ) : void
         {
             getView().quranContent.text = Aya(sura.ayat[0]).othmani;
-            for ( var i : int = 1; i < sura.ayat.length; i++)
+            for (var i : int = 1; i < sura.ayat.length; i++)
             {
                 getView().quranContent.text += " " + Aya(sura.ayat[i]).othmani;
             }
             getView().textScroller.viewport.verticalScrollPosition = 0;
-            
+
         }
-        
+
         public function updateHeader( sura : Sura ) : void
         {
             var header : SuraHeader = getView().suraHeader;
             header.suraLength.text = sura.ayat.length.toString();
             header.suraOrder.text = sura.orderInMushaf.toString();
+            header.suraName.text = ResourceManager.getInstance().getString('furqan', 'sura') + " " + sura.name;
         }
-        
+
         //--------------------------------------------------------------------------
         //
         //  Shortcuts

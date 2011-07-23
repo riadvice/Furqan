@@ -33,6 +33,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     
     <s:BitmapImage id="titleImage" source="{EmbeddedAssets.SURA_TITLE}" filters="{[glowFilter]}"/>
     
+    <s:Label id="suraName" styleName="suraName" horizontalCenter="0" top="10"/>
+    
     <s:VGroup id="orderGroup" top="15" left="105" horizontalAlign="center" gap="-10">
         <s:Label styleName="suraInfo" text="{resourceManager.getString('furqan','itsOrder')}"/>
         <s:Label styleName="suraInfo" id="suraOrder" text="15"/>

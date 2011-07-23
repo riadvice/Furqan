@@ -20,6 +20,9 @@ package org.lionart.furqan.view
     import org.lionart.furqan.controller.GetSuraByNumberCommand;
     import org.lionart.furqan.events.GetSuraEvent;
     import org.lionart.furqan.view.components.NavigationView;
+    import org.lionart.qurani.QuranConstants;
+    import org.lionart.qurani.Sura;
+    import org.puremvc.as3.interfaces.INotification;
     import org.puremvc.as3.patterns.mediator.Mediator;
 
     public class NavigationMediator extends Mediator
@@ -36,7 +39,77 @@ package org.lionart.furqan.view
 
             getView().addEventListener(GetSuraEvent.NEXT_SURA, onNextSura);
             getView().addEventListener(GetSuraEvent.PREVIOUS_SURA, onPreviousSura);
+
+            initView();
         }
+
+        //--------------------------------------------------------------------------
+        //
+        //  Notification handling
+        //
+        //--------------------------------------------------------------------------
+
+        override public function handleNotification( notification : INotification ) : void
+        {
+            switch (notification.getName())
+            {
+                case NotificationCatalog.SURA_LOADED:
+                    updateButtonsStates(notification.getBody() as Sura);
+                    break;
+            }
+        }
+
+        override public function listNotificationInterests() : Array
+        {
+            return [NotificationCatalog.SURA_LOADED];
+        }
+
+        //--------------------------------------------------------------------------
+        //
+        //  View actions
+        //
+        //--------------------------------------------------------------------------
+
+        private function initView() : void
+        {
+            enablePreviousButton(false);
+            enableNextButton(true);
+        }
+
+        private function enablePreviousButton( value : Boolean ) : void
+        {
+            getView().previousButtonEnabled = value;
+        }
+
+        private function enableNextButton( value : Boolean ) : void
+        {
+            getView().nextButtonEnabled = value;
+        }
+
+        private function updateButtonsStates( sura : Sura ) : void
+        {
+            if (sura.orderInMushaf != 1 && sura.orderInMushaf != QuranConstants.QURAN_SUWAR_NUMBER)
+            {
+                enablePreviousButton(true);
+                enableNextButton(true);
+            }
+            else if (sura.orderInMushaf == 1)
+            {
+                enablePreviousButton(false);
+                enableNextButton(true);
+            }
+            else
+            {
+                enablePreviousButton(true);
+                enableNextButton(false);
+            }
+        }
+
+        //--------------------------------------------------------------------------
+        //
+        //  Event handling
+        //
+        //--------------------------------------------------------------------------
 
         private function onPreviousSura( event : GetSuraEvent ) : void
         {
@@ -47,6 +120,12 @@ package org.lionart.furqan.view
         {
             sendNotification(NotificationCatalog.GET_SURA_BY_NUMBER, ++selectedSuraNumber);
         }
+
+        //--------------------------------------------------------------------------
+        //
+        //  Shortcuts
+        //
+        //--------------------------------------------------------------------------
 
         private function getView() : NavigationView
         {

@@ -44,3 +44,8 @@ components|QuranDisplayView #quranContent
 {
     fontSize                : 18;
 }
+
+.suraName
+{
+    fontSize                : 30;
+}

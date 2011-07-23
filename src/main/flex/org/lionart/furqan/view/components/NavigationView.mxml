@@ -28,6 +28,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         <![CDATA[
             import mx.events.FlexEvent;
             
+            [Bindable]
+            public var nextButtonEnabled : Boolean;
+            
+            [Bindable]
+            public var previousButtonEnabled : Boolean;
+            
             import org.lionart.furqan.events.GetSuraEvent;
 
             protected function nextButton_clickHandler( event : MouseEvent ) : void
@@ -50,10 +56,14 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <s:HGroup>
         <uicontrol:BaseButton id="previousButton"
             label="{resourceManager.getString('furqan','previousSura')}"
-            click="previousButton_clickHandler(event)"/>
+            click="previousButton_clickHandler(event)"
+            visible="{previousButtonEnabled}"
+            includeInLayout="{previousButtonEnabled}"/>
         <uicontrol:BaseButton id="nextButton"
             label="{resourceManager.getString('furqan','nextSura')}"
-            click="nextButton_clickHandler(event)"/>
+            click="nextButton_clickHandler(event)"
+            visible="{nextButtonEnabled}"
+            includeInLayout="{nextButtonEnabled}"/>
     </s:HGroup>
 
 </s:Group>

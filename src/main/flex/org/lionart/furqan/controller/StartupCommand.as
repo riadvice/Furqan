@@ -27,6 +27,7 @@ package org.lionart.furqan.controller
             addSubCommand(AddListenersCommand);
             addSubCommand(RegisterProxyCommand);
             addSubCommand(RegisterMediatorCommand);
+            addSubCommand(GetSuraByNumberCommand);
         }
     }
 }

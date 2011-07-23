@@ -26,6 +26,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
     <fx:Script>
         <![CDATA[
+            import mx.events.FlexEvent;
+            
             import org.lionart.furqan.events.GetSuraEvent;
 
             protected function nextButton_clickHandler( event : MouseEvent ) : void
@@ -37,6 +39,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
             {
                 dispatchEvent(new GetSuraEvent(GetSuraEvent.PREVIOUS_SURA));
             }
+            
         ]]>
     </fx:Script>
 

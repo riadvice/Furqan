@@ -19,14 +19,14 @@ package org.lionart.furqan.conf
 
     public final class EmbeddedAssets
     {
-        [Embed(source="/../resources/themes/standard/assets/full-margin.png")]
+        [Embed(source = "/../resources/themes/standard/assets/full-margin.png")]
         public static const PAPER_BACKGROUND : Class;
-        
-        [Embed(source="/../resources/themes/standard/assets/sura-title.png")]
+
+        [Embed(source = "/../resources/themes/standard/assets/sura-title.png")]
         public static const SURA_TITLE : Class;
-        
+
         // ICONS
-        [Embed(source="/../resources/themes/standard/assets/cross.png")]
+        [Embed(source = "/../resources/themes/standard/assets/cross.png")]
         public static const CROSS : Class;
     }
 }

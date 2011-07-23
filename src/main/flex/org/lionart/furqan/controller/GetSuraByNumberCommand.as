@@ -26,7 +26,16 @@ package org.lionart.furqan.controller
     {
         override public function execute( notification : INotification ) : void
         {
-            var sura : Sura = QuranProxy(facade.retrieveProxy(QuranProxy.NAME)).getSuraByNumber(parseInt(notification.getBody().toString()));
+            var suraNumber : int
+            if (notification.getBody() is int)
+            {
+                suraNumber = parseInt(notification.getBody().toString());
+            }
+            else
+            {
+                suraNumber = 1;
+            }
+            var sura : Sura = QuranProxy(facade.retrieveProxy(QuranProxy.NAME)).getSuraByNumber(suraNumber);
             facade.sendNotification(NotificationCatalog.SURA_LOADED, sura);
         }
     }

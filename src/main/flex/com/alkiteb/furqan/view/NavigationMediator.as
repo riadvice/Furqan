@@ -16,13 +16,13 @@
  */
 package com.alkiteb.furqan.view
 {
-    import com.alkiteb.qurani.QuranConstants;
-    import com.alkiteb.qurani.Sura;
-
     import com.alkiteb.furqan.conf.NotificationCatalog;
     import com.alkiteb.furqan.controller.GetSuraByNumberCommand;
     import com.alkiteb.furqan.events.GetSuraEvent;
     import com.alkiteb.furqan.view.components.NavigationView;
+    import com.alkiteb.qurani.Quran;
+    import com.alkiteb.qurani.Sura;
+
     import org.puremvc.as3.interfaces.INotification;
     import org.puremvc.as3.patterns.mediator.Mediator;
 
@@ -90,7 +90,7 @@ package com.alkiteb.furqan.view
 
         private function updateButtonsStates() : void
         {
-            if (selectedSuraNumber != 1 && selectedSuraNumber != QuranConstants.QURAN_SUWAR_NUMBER)
+            if (selectedSuraNumber != 1 && selectedSuraNumber != Quran.getSuwarCount())
             {
                 enablePreviousButton(true);
                 enableNextButton(true);

@@ -22,7 +22,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 <s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
                        xmlns:s="library://ns.adobe.com/flex/spark"
                        xmlns:mx="library://ns.adobe.com/flex/mx"
-                       xmlns:components="org.lionart.furqan.view.components.*"
+                       xmlns:components="com.alkiteb.furqan.view.components.*"
                        creationComplete="facade.startup(this)">
     <fx:Declarations>
         <!-- Place non-visual elements (e.g., services, value objects) here -->
@@ -30,7 +30,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
     <fx:Script>
         <![CDATA[
-            import org.lionart.furqan.FurqanFacade;
+            import com.alkiteb.furqan.FurqanFacade;
 
             private var facade : FurqanFacade = FurqanFacade.getInstance();
         ]]>

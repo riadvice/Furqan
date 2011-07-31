@@ -1,12 +1,12 @@
 /* CSS file */
 @namespace s "library://ns.adobe.com/flex/spark";
 @namespace mx "library://ns.adobe.com/flex/mx";
-@namespace components "org.lionart.furqan.view.components.*";
+@namespace components "com.alkiteb.furqan.view.components.*";
 
 s|WindowedApplication
 {
     /* make app window transparent */
-    skinClass               : ClassReference("org.lionart.furqan.skins.FurqanSkin");
+    skinClass               : ClassReference("com.alkiteb.furqan.skins.FurqanSkin");
     fontFamily              : "Uthman Taha Naksh";
     fontSize                : 13;
     chromeColor             : #A9BE7E;

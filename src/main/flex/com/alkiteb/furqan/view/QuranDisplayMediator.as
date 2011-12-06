@@ -66,6 +66,16 @@ package com.alkiteb.furqan.view
 
         public function showSura( sura : Sura ) : void
         {
+            if (sura.basmalah)
+            {
+                getView().bamalahLabel.text = sura.basmalah.othmani;
+                getView().bamalahLabel.includeInLayout = getView().bamalahLabel.visible = true;
+            }
+            else
+            {
+                getView().bamalahLabel.includeInLayout = getView().bamalahLabel.visible = false;
+            }
+
             getView().quranContent.text = Aya(sura.ayat[0]).othmani;
             for (var i : int = 1; i < sura.ayat.length; i++)
             {

@@ -42,12 +42,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
             top="5" bottom="5" right="5" left="5"/>
         <uicontrol:SuraHeader id="suraHeader" top="50" horizontalCenter="0"/>
         <s:Scroller id="textScroller" top="130" height="300" right="70" width="600">
-            <s:Group>
+            <s:VGroup>
+				<s:Label id="bamalahLabel" width="100%" />
                 <s:RichEditableText id="quranContent"
-                                    editable="false" lineBreak="toFit"
-                                    textAlign="justify" lineHeight="45"
+                                    editable="false"
                                     width="580"/>
-            </s:Group>
+            </s:VGroup>
         </s:Scroller>
     </s:BorderContainer>
     

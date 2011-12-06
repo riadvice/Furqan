@@ -38,6 +38,16 @@ components|QuranDisplayView #quranContent
     fontSize                : 28;
     textAlign               : justify;
     color                   : #333333;
+	lineHeight				: 45;
+	lineBreak				: toFit;
+}
+
+components|QuranDisplayView #bamalahLabel
+{
+	fontFamily              : "UthmanicHafs";
+	fontSize                : 28;
+	textAlign               : center;
+	color                   : #333333;
 }
 
 .suraInfo

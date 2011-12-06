@@ -38,10 +38,15 @@ package com.alkiteb.furqan.model
         {
             return quran.getSura(suraNumber);
         }
-		
-		public function getSuwarNames() : Array
+
+		public function getSuraByName( suraName : String ) : Sura
 		{
-			return quran.getSuwarNames();
+			return quran.getSuraByName(suraName);
 		}
+		
+        public function getSuwarNames() : Array
+        {
+            return quran.getSuwarNames();
+        }
     }
 }

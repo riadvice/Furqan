@@ -22,6 +22,7 @@ package com.alkiteb.furqan.events
     {
         public static const NEXT_SURA : String = "nextSura";
         public static const PREVIOUS_SURA : String = "previousSura";
+        public static const SURA_BY_NAME : String = "suraByName";
 
         public function GetSuraEvent( type : String, bubbles : Boolean = false, cancelable : Boolean = false )
         {

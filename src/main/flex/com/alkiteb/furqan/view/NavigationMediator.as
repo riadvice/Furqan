@@ -17,6 +17,7 @@
 package com.alkiteb.furqan.view
 {
     import com.alkiteb.furqan.conf.NotificationCatalog;
+    import com.alkiteb.furqan.controller.GetSuraByNameCommand;
     import com.alkiteb.furqan.controller.GetSuraByNumberCommand;
     import com.alkiteb.furqan.events.GetSuraEvent;
     import com.alkiteb.furqan.view.components.NavigationView;
@@ -33,15 +34,18 @@ package com.alkiteb.furqan.view
         public static const NAME : String = "NavigationMediator";
 
         public var selectedSuraNumber : int = 1;
+        public var selectedSuraName : String;
 
         public function NavigationMediator( viewComponent : Object = null )
         {
             super(NAME, viewComponent);
 
             facade.registerCommand(NotificationCatalog.GET_SURA_BY_NUMBER, GetSuraByNumberCommand);
+            facade.registerCommand(NotificationCatalog.GET_SURA_BY_NAME, GetSuraByNameCommand);
 
             getView().addEventListener(GetSuraEvent.NEXT_SURA, onNextSura);
             getView().addEventListener(GetSuraEvent.PREVIOUS_SURA, onPreviousSura);
+            getView().addEventListener(GetSuraEvent.SURA_BY_NAME, onSuraByName);
 
             initView();
         }
@@ -58,7 +62,9 @@ package com.alkiteb.furqan.view
             {
                 case NotificationCatalog.SURA_LOADED:
                     selectedSuraNumber = (notification.getBody() as Sura).orderInMushaf;
+                    selectedSuraName = (notification.getBody() as Sura).name;
                     updateButtonsStates();
+                    updateSelectedSuraName();
                     break;
 
                 case NotificationCatalog.SUWAR_NAMES_LOADED:
@@ -113,6 +119,15 @@ package com.alkiteb.furqan.view
             }
         }
 
+        private function updateSelectedSuraName() : void
+        {
+            getView().removeEventListener(GetSuraEvent.SURA_BY_NAME, onSuraByName);
+
+            getView().suwarNamesList.selectedItem = selectedSuraName;
+
+            getView().addEventListener(GetSuraEvent.SURA_BY_NAME, onSuraByName);
+        }
+
         //--------------------------------------------------------------------------
         //
         //  Event handling
@@ -127,6 +142,11 @@ package com.alkiteb.furqan.view
         private function onNextSura( event : GetSuraEvent ) : void
         {
             sendNotification(NotificationCatalog.GET_SURA_BY_NUMBER, selectedSuraNumber + 1);
+        }
+
+        private function onSuraByName( event : GetSuraEvent ) : void
+        {
+            sendNotification(NotificationCatalog.GET_SURA_BY_NAME, getView().suwarNamesList.selectedItem);
         }
 
         //--------------------------------------------------------------------------

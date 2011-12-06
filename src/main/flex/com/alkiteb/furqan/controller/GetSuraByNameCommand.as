@@ -18,16 +18,17 @@ package com.alkiteb.furqan.controller
 {
     import com.alkiteb.furqan.conf.NotificationCatalog;
     import com.alkiteb.furqan.model.QuranProxy;
-    
+    import com.alkiteb.qurani.Sura;
+
     import org.puremvc.as3.interfaces.INotification;
     import org.puremvc.as3.patterns.command.SimpleCommand;
 
-    public class GetSuwarNamesCommand extends SimpleCommand
+    public class GetSuraByNameCommand extends SimpleCommand
     {
-		override public function execute( notification : INotification ) : void
-		{
-            var suwarNames : Array = QuranProxy(facade.retrieveProxy(QuranProxy.NAME)).getSuwarNames();
-            facade.sendNotification(NotificationCatalog.SUWAR_NAMES_LOADED, suwarNames);
-		}
+        override public function execute( notification : INotification ) : void
+        {
+            var sura : Sura = QuranProxy(facade.retrieveProxy(QuranProxy.NAME)).getSuraByName(notification.getBody() as String);
+            facade.sendNotification(NotificationCatalog.SURA_LOADED, sura);
+        }
     }
 }

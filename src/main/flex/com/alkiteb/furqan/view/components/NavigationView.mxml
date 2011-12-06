@@ -57,13 +57,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         <uicontrol:BaseButton id="previousButton"
             label="{resourceManager.getString('furqan','previousSura')}"
             click="previousButton_clickHandler(event)"
-            visible="{previousButtonEnabled}"
-            includeInLayout="{previousButtonEnabled}"/>
+            enabled="{previousButtonEnabled}"/>
         <uicontrol:BaseButton id="nextButton"
             label="{resourceManager.getString('furqan','nextSura')}"
             click="nextButton_clickHandler(event)"
-            visible="{nextButtonEnabled}"
-            includeInLayout="{nextButtonEnabled}"/>
+            enabled="{nextButtonEnabled}"/>
     </s:HGroup>
 
 </s:Group>

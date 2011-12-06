@@ -23,6 +23,8 @@ package com.alkiteb.furqan.view
     import com.alkiteb.qurani.Quran;
     import com.alkiteb.qurani.Sura;
 
+    import mx.collections.ArrayCollection;
+
     import org.puremvc.as3.interfaces.INotification;
     import org.puremvc.as3.patterns.mediator.Mediator;
 
@@ -58,12 +60,16 @@ package com.alkiteb.furqan.view
                     selectedSuraNumber = (notification.getBody() as Sura).orderInMushaf;
                     updateButtonsStates();
                     break;
+
+                case NotificationCatalog.SUWAR_NAMES_LOADED:
+                    getView().suwarNamesList.dataProvider = new ArrayCollection(notification.getBody() as Array);
+                    break;
             }
         }
 
         override public function listNotificationInterests() : Array
         {
-            return [NotificationCatalog.SURA_LOADED];
+            return [NotificationCatalog.SURA_LOADED, NotificationCatalog.SUWAR_NAMES_LOADED];
         }
 
         //--------------------------------------------------------------------------

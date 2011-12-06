@@ -16,19 +16,18 @@
  */
 package com.alkiteb.furqan.controller
 {
-    import org.puremvc.as3.patterns.command.MacroCommand;
+    import com.alkiteb.furqan.conf.NotificationCatalog;
+    import com.alkiteb.furqan.model.QuranProxy;
+    
+    import org.puremvc.as3.interfaces.INotification;
+    import org.puremvc.as3.patterns.command.SimpleCommand;
 
-    public class StartupCommand extends MacroCommand
+    public class GetSuwarNamesCommand extends SimpleCommand
     {
-        override protected function initializeMacroCommand() : void
-        {
-            addSubCommand(CenterApplicationCommand);
-            addSubCommand(ConfigureApplicationCommand);
-            addSubCommand(AddListenersCommand);
-            addSubCommand(RegisterProxyCommand);
-            addSubCommand(RegisterMediatorCommand);
-			addSubCommand(GetSuwarNamesCommand)
-            addSubCommand(GetSuraByNumberCommand);
-        }
+		override public function execute( notification : INotification ) : void
+		{
+			var suwarNames : Array = QuranProxy(facade.retrieveProxy(QuranProxy.NAME)).getSuwarNames();
+			facade.sendNotification(NotificationCatalog.SUWAR_NAMES_LOADED, suwarNames);
+		}
     }
 }

@@ -20,6 +20,7 @@ package com.alkiteb.furqan.conf
     public final class NotificationCatalog
     {
         public static const STARTUP : String = "startup";
+		public static const SUWAR_NAMES_LOADED : String = "suwarNamesLoaded";
 
         // Navigation actions
         public static const GET_SURA_BY_NUMBER : String = "getSuraByNumber";

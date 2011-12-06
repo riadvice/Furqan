@@ -62,6 +62,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
             label="{resourceManager.getString('furqan','nextSura')}"
             click="nextButton_clickHandler(event)"
             enabled="{nextButtonEnabled}"/>
+		<s:ComboBox id="suwarNamesList" />
     </s:HGroup>
 
 </s:Group>

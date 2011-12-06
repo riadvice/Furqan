@@ -18,7 +18,7 @@ package com.alkiteb.furqan.model
 {
     import com.alkiteb.qurani.Quran;
     import com.alkiteb.qurani.Sura;
-
+    
     import org.puremvc.as3.interfaces.IProxy;
     import org.puremvc.as3.patterns.proxy.Proxy;
 
@@ -38,5 +38,10 @@ package com.alkiteb.furqan.model
         {
             return quran.getSura(suraNumber);
         }
+		
+		public function getSuwarNames() : Array
+		{
+			return quran.getSuwarNames();
+		}
     }
 }

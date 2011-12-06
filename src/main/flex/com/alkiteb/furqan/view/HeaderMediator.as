@@ -21,6 +21,7 @@ package com.alkiteb.furqan.view
     import com.alkiteb.furqan.controller.MinimizeApplicationCommand;
     import com.alkiteb.furqan.events.ApplicationEvent;
     import com.alkiteb.furqan.view.components.HeaderView;
+
     import org.puremvc.as3.patterns.mediator.Mediator;
 
     public class HeaderMediator extends Mediator

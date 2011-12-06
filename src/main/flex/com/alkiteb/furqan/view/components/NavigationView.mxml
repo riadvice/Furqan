@@ -70,7 +70,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
             label="{resourceManager.getString('furqan','nextSura')}"
             click="nextButton_clickHandler(event)"
             enabled="{nextButtonEnabled}"/>
-		<s:Label text="أو أختار سورة" paddingRight="20"/>
+		<s:Label text="{resourceManager.getString('furqan','orChoose')}"
+				 paddingRight="20"/>
 		<s:ComboBox id="suwarNamesList"
 			change="suwarNamesList_changeHandler(event)"/>
     </s:HGroup>

@@ -50,6 +50,12 @@ components|QuranDisplayView #bamalahLabel
 	color                   : #333333;
 }
 
+components|NavigationView #suwarNamesList
+{
+	skinClass				: ClassReference("com.alkiteb.furqan.skins.SuraSelectorSkin");
+	fontSize                : 15;
+}
+
 .suraInfo
 {
     fontSize                : 18;

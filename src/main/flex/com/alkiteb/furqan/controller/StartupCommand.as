@@ -29,6 +29,7 @@ package com.alkiteb.furqan.controller
             addSubCommand(RegisterMediatorCommand);
 			addSubCommand(GetSuwarNamesCommand)
             addSubCommand(GetSuraByNumberCommand);
+			addSubCommand(CheckForUpdateCommand);
         }
     }
 }

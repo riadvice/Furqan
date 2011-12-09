@@ -3,6 +3,7 @@
 @namespace mx "library://ns.adobe.com/flex/mx";
 @namespace components "com.alkiteb.furqan.view.components.*";
 @namespace local "*";
+@namespace itemrenderer "com.alkiteb.furqan.uicontrol.itemrenderer.*";
 
 s|WindowedApplication
 {
@@ -14,6 +15,18 @@ s|WindowedApplication
     color                   : black;
     layoutDirection         : rtl; 
     direction               : rtl;
+}
+
+
+global
+{
+    contentBackgroundColor  : #A8CA75;
+    alternatingItemColor    : #859663;
+    rollOverColor           : #E0FCA7;
+    selectionColor          : #C7FC5B;
+    symbolColor             : #313E17;
+    focusColor              : #A9BE62;
+    accentColor             : #333E26;
 }
 
 
@@ -74,7 +87,12 @@ components|QuranDisplayView #bamalahLabel
 components|NavigationView #suwarNamesList
 {
 	skinClass				: ClassReference("com.alkiteb.furqan.skins.SuraSelectorSkin");
-	fontSize                : 15;
+	fontSize                : 18;
+}
+
+itemrenderer|SuraSelectorItemRenderer
+{
+    fontSize                : 18;
 }
 
 .suraInfo

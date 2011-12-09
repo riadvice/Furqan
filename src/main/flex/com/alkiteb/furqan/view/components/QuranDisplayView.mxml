@@ -43,11 +43,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         <uicontrol:SuraHeader id="suraHeader" top="50" horizontalCenter="0"/>
         <s:Scroller id="textScroller" top="130" height="300" right="70" width="600">
             <s:VGroup>
-				<s:Label id="bamalahLabel" width="100%" />
+                <s:Label id="bamalahLabel" width="100%" />
                 <s:RichEditableText id="quranContent"
                                     editable="false"
                                     width="580"
-									focusEnabled="false"/>
+                                    focusEnabled="false"/>
             </s:VGroup>
         </s:Scroller>
     </s:BorderContainer>

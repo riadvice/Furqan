@@ -227,15 +227,18 @@ is defined by the ComboBoxTextInputSkin class.
         </s:Group>
     </s:PopUpAnchor>
     
-    <!---  The default skin is ComboBoxButtonSkin. 
-            @copy spark.components.supportClasses.DropDownListBase#openButton
-            @see spark.skins.spark.ComboBoxButtonSkin -->
-    <s:Button id="openButton" width="19" right="0" top="0" bottom="0" focusEnabled="false"
-              skinClass="spark.skins.spark.ComboBoxButtonSkin" tabEnabled="false" />  
-    <!--- @copy spark.components.ComboBox#textInput -->
-    <s:TextInput id="textInput" enabled.disabled="false"
-                 left="0" right="18" top="0" bottom="0" 
-                 skinClass="com.alkiteb.furqan.skins.SuraSelectorTextInputSkin"/> 
+    <s:VGroup right="0" left="0" top="0" bottom="0" gap="0">
+        <!--- @copy spark.components.ComboBox#textInput -->
+        <s:TextInput id="textInput" enabled.disabled="false"
+                     width="100%"
+                     skinClass="com.alkiteb.furqan.skins.SuraSelectorTextInputSkin"/>
+        <!---  The default skin is ComboBoxButtonSkin. 
+        @copy spark.components.supportClasses.DropDownListBase#openButton
+        @see spark.skins.spark.ComboBoxButtonSkin -->
+        <s:Button id="openButton" width="100%" height="12" focusEnabled="false"
+                  skinClass="com.alkiteb.furqan.skins.SuraSelectorButtonSkin" tabEnabled="false" />  
+    </s:VGroup>
+
     
 </s:SparkSkin>
 

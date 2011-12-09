@@ -26,9 +26,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
     <fx:Script>
         <![CDATA[
-			import mx.events.FlexEvent;
-			
-			import spark.events.IndexChangeEvent;
+            import mx.events.FlexEvent;
+            
+            import spark.events.IndexChangeEvent;
 
             
             [Bindable]
@@ -49,12 +49,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
                 dispatchEvent(new GetSuraEvent(GetSuraEvent.PREVIOUS_SURA));
             }
             
-			protected function suwarNamesList_changeHandler(event:IndexChangeEvent):void
-			{
-				dispatchEvent(new GetSuraEvent(GetSuraEvent.SURA_BY_NAME));
-			}
-			
-		]]>
+            protected function suwarNamesList_changeHandler(event:IndexChangeEvent):void
+            {
+                dispatchEvent(new GetSuraEvent(GetSuraEvent.SURA_BY_NAME));
+            }
+            
+        ]]>
     </fx:Script>
 
     <fx:Declarations>
@@ -66,9 +66,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
             label="{resourceManager.getString('furqan','previousSura')}"
             click="previousButton_clickHandler(event)"
             enabled="{previousButtonEnabled}"/>
-		<s:ComboBox id="suwarNamesList"
-					change="suwarNamesList_changeHandler(event)"
-					width="100"/>
+        <s:ComboBox id="suwarNamesList"
+                    change="suwarNamesList_changeHandler(event)"
+                    width="100"/>
         <uicontrol:BaseButton id="nextButton"
             label="{resourceManager.getString('furqan','nextSura')}"
             click="nextButton_clickHandler(event)"

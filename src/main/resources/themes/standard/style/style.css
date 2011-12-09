@@ -2,6 +2,7 @@
 @namespace s "library://ns.adobe.com/flex/spark";
 @namespace mx "library://ns.adobe.com/flex/mx";
 @namespace components "com.alkiteb.furqan.view.components.*";
+@namespace local "*";
 
 s|WindowedApplication
 {
@@ -30,6 +31,26 @@ s|WindowedApplication
     src                     : url("/../resources/themes/standard/fonts/UthmanTN1B Ver09.otf");
     font-family             : "Uthman Taha Naksh";
     fontWeight              : bold;
+}
+
+local|Furqan #headerView
+{
+    top                     : 0;
+    left                    : 0;
+    right                   : 0;
+}
+
+local|Furqan #navigationView
+{
+    top                     : 32;
+    left                    : 40;
+    right                   : 40;
+}
+
+local|Furqan #quranView
+{
+    bottom                  : 10;
+    horizontalCenter        : 0;
 }
 
 components|QuranDisplayView #quranContent

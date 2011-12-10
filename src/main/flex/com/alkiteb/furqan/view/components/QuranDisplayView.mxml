@@ -20,12 +20,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
-    xmlns:s="library://ns.adobe.com/flex/spark"
-    xmlns:mx="library://ns.adobe.com/flex/mx"
-    xmlns:uicontrol="com.alkiteb.furqan.uicontrol.*"
-    width="680"
-    height="414"
-    filters="{[shadow]}">
+         xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx"
+         xmlns:uicontrol="com.alkiteb.furqan.uicontrol.*"
+         width="680"
+         height="414"
+         filters="{[shadow]}">
     <fx:Script>
         <![CDATA[
             import com.alkiteb.furqan.conf.EmbeddedAssets;
@@ -35,11 +35,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         <s:DropShadowFilter id="shadow" distance="0" alpha="0.4"/>
         <s:GlowFilter id="glowFilter" color="#A9BE7E" blurX="6" blurY="6" alpha="0.8" strength="3"/>
     </fx:Declarations>
-    
+
     <s:BorderContainer borderColor="white" cornerRadius="5" horizontalCenter="0" bottom="0">
         <s:BitmapImage id="borderImage" 
-            source="{EmbeddedAssets.PAPER_BACKGROUND}" filters="{[glowFilter]}"
-            top="5" bottom="5" right="5" left="5"/>
+                       source="{EmbeddedAssets.PAPER_BACKGROUND}" filters="{[glowFilter]}"
+                       top="5" bottom="5" right="5" left="5"/>
         <uicontrol:SuraHeader id="suraHeader" top="50" horizontalCenter="0"/>
         <s:Scroller id="textScroller" top="130" height="300" right="70" width="600">
             <s:VGroup>
@@ -51,5 +51,5 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
             </s:VGroup>
         </s:Scroller>
     </s:BorderContainer>
-    
+
 </s:Group>

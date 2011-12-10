@@ -20,23 +20,23 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
-    xmlns:s="library://ns.adobe.com/flex/spark"
-    xmlns:mx="library://ns.adobe.com/flex/mx"
-    xmlns:uicontrol="com.alkiteb.furqan.uicontrol.*">
+         xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx"
+         xmlns:uicontrol="com.alkiteb.furqan.uicontrol.*">
 
     <fx:Script>
         <![CDATA[
             import mx.events.FlexEvent;
-            
+
             import spark.events.IndexChangeEvent;
 
-            
+
             [Bindable]
             public var nextButtonEnabled : Boolean;
-            
+
             [Bindable]
             public var previousButtonEnabled : Boolean;
-            
+
             import com.alkiteb.furqan.events.GetSuraEvent;
 
             protected function nextButton_clickHandler( event : MouseEvent ) : void
@@ -48,12 +48,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
             {
                 dispatchEvent(new GetSuraEvent(GetSuraEvent.PREVIOUS_SURA));
             }
-            
+
             protected function suwarNamesList_changeHandler(event:IndexChangeEvent):void
             {
                 dispatchEvent(new GetSuraEvent(GetSuraEvent.SURA_BY_NAME));
             }
-            
+
         ]]>
     </fx:Script>
 
@@ -61,18 +61,24 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
         <!-- Place non-visual elements (e.g., services, value objects) here -->
     </fx:Declarations>
 
+    <s:HGroup right="0">
+        <uicontrol:BaseButton styleName="copyButton"/>
+        <uicontrol:BaseButton styleName="printButton"/>
+        <uicontrol:BaseButton styleName="aboutButton"/>
+    </s:HGroup>
+
     <s:HGroup>
         <uicontrol:BaseButton id="previousButton"
-            label="{resourceManager.getString('furqan','previousSura')}"
-            click="previousButton_clickHandler(event)"
-            enabled="{previousButtonEnabled}"/>
+                              label="{resourceManager.getString('furqan','previousSura')}"
+                              click="previousButton_clickHandler(event)"
+                              enabled="{previousButtonEnabled}"/>
         <s:ComboBox id="suwarNamesList"
                     change="suwarNamesList_changeHandler(event)"
                     width="100"/>
         <uicontrol:BaseButton id="nextButton"
-            label="{resourceManager.getString('furqan','nextSura')}"
-            click="nextButton_clickHandler(event)"
-            enabled="{nextButtonEnabled}"/>
+                              label="{resourceManager.getString('furqan','nextSura')}"
+                              click="nextButton_clickHandler(event)"
+                              enabled="{nextButtonEnabled}"/>
     </s:HGroup>
 
 </s:Group>

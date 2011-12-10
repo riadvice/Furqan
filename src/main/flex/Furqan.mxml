@@ -47,5 +47,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     <components:QuranDisplayView id="quranView"/>
 
     <fx:Style source="/../resources/themes/standard/style/style.css"/>
+    <fx:Style source="/../resources/themes/standard/style/buttons.css"/>
 
 </s:WindowedApplication>

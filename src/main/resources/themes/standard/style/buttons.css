@@ -1,0 +1,18 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+.printButton
+{
+    icon                    : Embed(source="../resources/themes/standard/icons/icon-printer.png");
+}
+
+.copyButton
+{
+    icon                    : Embed(source="../resources/themes/standard/icons/icon-copy.png");
+}
+
+.aboutButton
+{
+    icon                    : Embed(source="../resources/themes/standard/icons/icon-info.png");
+}

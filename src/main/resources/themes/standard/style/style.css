@@ -27,6 +27,7 @@ global
     symbolColor             : #313E17;
     focusColor              : #A9BE62;
     accentColor             : #333E26;
+    focusedTextSelectionColor   :#84A73C;
 }
 
 
@@ -58,6 +59,7 @@ local|Furqan #navigationView
     top                     : 32;
     left                    : 40;
     right                   : 40;
+    fontSize                : 18;
 }
 
 local|Furqan #quranView
@@ -93,6 +95,12 @@ components|NavigationView #suwarNamesList
 itemrenderer|SuraSelectorItemRenderer
 {
     fontSize                : 18;
+}
+
+mx|ToolTip
+{
+    backgroundColor: #A8CA75;
+    fontSize: 15;
 }
 
 .suraInfo

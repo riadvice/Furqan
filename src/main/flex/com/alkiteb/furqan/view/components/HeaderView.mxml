@@ -20,9 +20,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
-    xmlns:s="library://ns.adobe.com/flex/spark"
-    xmlns:mx="library://ns.adobe.com/flex/mx"
-    xmlns:uicontrol="com.alkiteb.furqan.uicontrol.*">
+         xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx"
+         xmlns:uicontrol="com.alkiteb.furqan.uicontrol.*">
     <fx:Script>
         <![CDATA[
             import com.alkiteb.furqan.conf.EmbeddedAssets;
@@ -44,16 +44,16 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     </fx:Declarations>
 
     <s:HGroup left="10"
-        top="10">
+              top="10">
         <uicontrol:BaseButton id="closeButton"
-            icon="{EmbeddedAssets.CROSS}"
-            click="closeButton_clickHandler(event)"
-            skinClass="spark.skins.spark.windowChrome.CloseButtonSkin"
-            toolTip="{resourceManager.getString('furqan','exit')}"/>
+                              icon="{EmbeddedAssets.CROSS}"
+                              click="closeButton_clickHandler(event)"
+                              skinClass="spark.skins.spark.windowChrome.CloseButtonSkin"
+                              toolTip="{resourceManager.getString('furqan','exit')}"/>
 
         <uicontrol:BaseButton id="minimizeButton"
-            click="minimizeButton_clickHandler(event)"
-            skinClass="spark.skins.spark.windowChrome.MinimizeButtonSkin"/>
+                              click="minimizeButton_clickHandler(event)"
+                              skinClass="spark.skins.spark.windowChrome.MinimizeButtonSkin"/>
     </s:HGroup>
 
 </s:Group>

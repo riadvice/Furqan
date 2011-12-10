@@ -26,8 +26,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
     <fx:Script>
         <![CDATA[
-            import mx.events.FlexEvent;
-
             import spark.events.IndexChangeEvent;
 
 
@@ -62,9 +60,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     </fx:Declarations>
 
     <s:HGroup right="0">
-        <uicontrol:BaseButton styleName="copyButton"/>
-        <uicontrol:BaseButton styleName="printButton"/>
-        <uicontrol:BaseButton styleName="aboutButton"/>
+        <uicontrol:BaseButton styleName="copyButton" toolTip="{resourceManager.getString('furqan','copySura')}"/>
+        <uicontrol:BaseButton styleName="printButton" toolTip="{resourceManager.getString('furqan','printSura')}"/>
+        <uicontrol:BaseButton styleName="aboutButton" toolTip="{resourceManager.getString('furqan','about')}"/>
     </s:HGroup>
 
     <s:HGroup>

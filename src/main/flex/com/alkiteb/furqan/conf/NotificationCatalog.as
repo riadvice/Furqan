@@ -32,5 +32,11 @@ package com.alkiteb.furqan.conf
 
         // Navigation results
         public static const SURA_LOADED : String = "suraLoaded";
+        
+        // Actions
+        public static const COPY_SURA_TEXT : String = "copySuraText";
+        public static const SHOW_PRINT_WINDOW : String = "showPrintWindow";
+        public static const SHOW_ABOUT_WINDOW : String = "showAboutWindow";
+
     }
 }

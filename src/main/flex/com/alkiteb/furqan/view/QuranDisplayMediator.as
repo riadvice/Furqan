@@ -17,13 +17,14 @@
 package com.alkiteb.furqan.view
 {
     import com.alkiteb.furqan.conf.NotificationCatalog;
+    import com.alkiteb.furqan.controller.CopySuraTextCommand;
     import com.alkiteb.furqan.uicontrol.SuraHeader;
     import com.alkiteb.furqan.view.components.QuranDisplayView;
     import com.alkiteb.qurani.Aya;
     import com.alkiteb.qurani.Sura;
-    
+
     import mx.resources.ResourceManager;
-    
+
     import org.puremvc.as3.interfaces.INotification;
     import org.puremvc.as3.patterns.mediator.Mediator;
 
@@ -34,6 +35,8 @@ package com.alkiteb.furqan.view
         public function QuranDisplayMediator( viewComponent : Object = null )
         {
             super(NAME, viewComponent);
+
+            facade.registerCommand(NotificationCatalog.COPY_SURA_TEXT, CopySuraTextCommand);
         }
 
         //--------------------------------------------------------------------------

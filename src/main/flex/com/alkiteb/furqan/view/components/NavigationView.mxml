@@ -26,6 +26,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
     <fx:Script>
         <![CDATA[
+            import com.alkiteb.furqan.events.ActionEvent;
+
             import spark.events.IndexChangeEvent;
 
 
@@ -52,6 +54,21 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
                 dispatchEvent(new GetSuraEvent(GetSuraEvent.SURA_BY_NAME));
             }
 
+            protected function copyButton_clickHandler(event:MouseEvent):void
+            {
+                dispatchEvent(new ActionEvent(ActionEvent.COPY_SURA));
+            }
+
+            protected function printButton_clickHandler(event:MouseEvent):void
+            {
+                dispatchEvent(new ActionEvent(ActionEvent.PRINT_SURA));
+            }
+
+            protected function aboutButton_clickHandler(event:MouseEvent):void
+            {
+                dispatchEvent(new ActionEvent(ActionEvent.ABOUT));
+            }
+
         ]]>
     </fx:Script>
 
@@ -60,9 +77,18 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
     </fx:Declarations>
 
     <s:HGroup right="0">
-        <uicontrol:BaseButton styleName="copyButton" toolTip="{resourceManager.getString('furqan','copySura')}"/>
-        <uicontrol:BaseButton styleName="printButton" toolTip="{resourceManager.getString('furqan','printSura')}"/>
-        <uicontrol:BaseButton styleName="aboutButton" toolTip="{resourceManager.getString('furqan','about')}"/>
+        <uicontrol:BaseButton id="copyButton"
+                              styleName="copyButton"
+                              click="copyButton_clickHandler(event)"
+                              toolTip="{resourceManager.getString('furqan','copySura')}"/>
+        <uicontrol:BaseButton id="printButton" 
+                              styleName="printButton"
+                              click="printButton_clickHandler(event)"
+                              toolTip="{resourceManager.getString('furqan','printSura')}"/>
+        <uicontrol:BaseButton id="aboutButton"
+                              styleName="aboutButton"
+                              click="aboutButton_clickHandler(event)"
+                              toolTip="{resourceManager.getString('furqan','about')}"/>
     </s:HGroup>
 
     <s:HGroup>

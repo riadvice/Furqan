@@ -17,8 +17,12 @@
 package com.alkiteb.furqan.view
 {
     import com.alkiteb.furqan.conf.NotificationCatalog;
+    import com.alkiteb.furqan.controller.CopySuraTextCommand;
     import com.alkiteb.furqan.controller.GetSuraByNameCommand;
     import com.alkiteb.furqan.controller.GetSuraByNumberCommand;
+    import com.alkiteb.furqan.controller.ShowAboutWindowCommand;
+    import com.alkiteb.furqan.controller.ShowPrintWindowCommand;
+    import com.alkiteb.furqan.events.ActionEvent;
     import com.alkiteb.furqan.events.GetSuraEvent;
     import com.alkiteb.furqan.view.components.NavigationView;
     import com.alkiteb.qurani.Quran;
@@ -43,9 +47,19 @@ package com.alkiteb.furqan.view
             facade.registerCommand(NotificationCatalog.GET_SURA_BY_NUMBER, GetSuraByNumberCommand);
             facade.registerCommand(NotificationCatalog.GET_SURA_BY_NAME, GetSuraByNameCommand);
 
+            facade.registerCommand(NotificationCatalog.SHOW_PRINT_WINDOW, ShowPrintWindowCommand);
+            facade.registerCommand(NotificationCatalog.SHOW_ABOUT_WINDOW, ShowAboutWindowCommand);
+
+
+            // Select sura actions
             getView().addEventListener(GetSuraEvent.NEXT_SURA, onNextSura);
             getView().addEventListener(GetSuraEvent.PREVIOUS_SURA, onPreviousSura);
             getView().addEventListener(GetSuraEvent.SURA_BY_NAME, onSuraByName);
+
+            // Action menu events
+            getView().addEventListener(ActionEvent.COPY_SURA, onCopySura);
+            getView().addEventListener(ActionEvent.PRINT_SURA, onPrintSura);
+            getView().addEventListener(ActionEvent.ABOUT, onAbout);
 
             initView();
         }
@@ -147,6 +161,21 @@ package com.alkiteb.furqan.view
         private function onSuraByName( event : GetSuraEvent ) : void
         {
             sendNotification(NotificationCatalog.GET_SURA_BY_NAME, getView().suwarNamesList.selectedItem);
+        }
+
+        private function onCopySura( event : ActionEvent ) : void
+        {
+            sendNotification(NotificationCatalog.COPY_SURA_TEXT);
+        }
+
+        private function onPrintSura( event : ActionEvent ) : void
+        {
+
+        }
+
+        private function onAbout( event : ActionEvent ) : void
+        {
+
         }
 
         //--------------------------------------------------------------------------

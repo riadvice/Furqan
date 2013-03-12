@@ -34,7 +34,7 @@ global
 /** Font Info **/
 @font-face 
 {
-    src                     : url("/../resources/themes/standard/fonts/UthmanTN1 Ver09.otf");
+    src                     : url("/../resources/themes/standard/fonts/UthmanTN1 Ver10.otf");
     fontFamily              : "Uthman Taha Naksh";
     fontWeight              : normal;
 }
@@ -42,7 +42,7 @@ global
 /** Font Info **/
 @font-face 
 {
-    src                     : url("/../resources/themes/standard/fonts/UthmanTN1B Ver09.otf");
+    src                     : url("/../resources/themes/standard/fonts/UthmanTN1B Ver10.otf");
     font-family             : "Uthman Taha Naksh";
     fontWeight              : bold;
 }
